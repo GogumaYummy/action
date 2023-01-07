@@ -2,4 +2,6 @@ name: CI/CD
 on: push
 jobs:
   checkout:
-    runs-on:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: ls -al
