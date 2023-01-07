@@ -3,15 +3,11 @@ on:
   push:
     branches: ['main']
 jobs:
-  Checkout:
+  CI:
     runs-on: ubuntu-20.04
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-  Test:
-    steps:
-      - run: ls -al
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
