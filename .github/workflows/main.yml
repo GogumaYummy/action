@@ -1,5 +1,7 @@
 name: CI/CD
-on: push
+on:
+  push:
+    branches: ['main']
 jobs:
   checkout:
     runs-on: ubuntu-20.04
