@@ -2,7 +2,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "start": "pm2-docker start dist/app.js"
+    "start": "pm2-docker start dist/server.js"
   },
   "dependencies": {
     "@types/express": "^4.17.15",
