@@ -3,7 +3,7 @@ on:
   push:
     branches: ['main']
 jobs:
-  CI:
+  CI/CD:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -39,11 +39,3 @@ jobs:
       # - name: Login to Amazon ECR
       #   id: login-ecr
       #   uses: aws-actions/amazon-ecr-login@v1
-
-  CD:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Check
-        run: |
-          ls -al
-          ls -al dist
