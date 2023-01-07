@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 
 express()
   .get('/game', (req, res) => {
