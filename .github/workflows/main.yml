@@ -4,12 +4,14 @@ on:
     branches: ['main']
 jobs:
   checkout:
-    name: Checkout
+    name: Hi
     runs-on: ubuntu-20.04
 
     steps:
-      - name: GGGG
+      - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Build
         uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
