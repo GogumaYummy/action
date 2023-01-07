@@ -4,4 +4,5 @@ jobs:
   checkout:
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v3
       - run: ls -al
