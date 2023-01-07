@@ -1,0 +1,10 @@
+node_modules
+src
+.eslintrc
+.gitignore
+.prettierrc
+Jenkinsfile
+jest.config.ts
+License
+README.md
+tscofig.json
