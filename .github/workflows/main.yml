@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  CI/CD:
+  CI_CD:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
