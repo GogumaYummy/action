@@ -15,13 +15,14 @@ jobs:
           node-version: 18.13.0
           cache: npm
 
+      - name: Install Packages
+        run: npm ci
+
       - name: Test
         run: npm test
 
       - name: Build
-        run: |
-          npm ci
-          npm run build
+        run: npm run build
 
       - name: Check
         run: |
