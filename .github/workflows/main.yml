@@ -47,27 +47,27 @@ jobs:
       #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #     aws-region: us-east-1
 
-      - name: Login to Amazon ECR Public
-        id: login-ecr-public
-        uses: aws-actions/amazon-ecr-login@v1
-        with:
-          registry-type: public
+      # - name: Login to Amazon ECR Public
+      #   id: login-ecr-public
+      #   uses: aws-actions/amazon-ecr-login@v1
+      #   with:
+      #     registry-type: public
 
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      # - name: Setup Docker Buildx
+      #   uses: docker/setup-buildx-action@v1
 
-      - name: Build, tag, and push docker image to Amazon ECR Public
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
-        id: build-image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ env.ECR_REGISTRY }}/${{ env.REGISTRY_ALIAS }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      # - name: Build, tag, and push docker image to Amazon ECR Public
+      #   env:
+      #     ECR_REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
+      #     IMAGE_TAG: ${{ github.sha }}
+      #   id: build-image
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     context: .
+      #     push: true
+      #     tags: ${{ env.ECR_REGISTRY }}/${{ env.REGISTRY_ALIAS }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+      #     cache-from: type=gha
+      #     cache-to: type=gha,mode=max
 
       - name: Configure AWS region again
         uses: aws-actions/configure-aws-credentials@v1
