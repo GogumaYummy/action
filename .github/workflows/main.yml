@@ -10,7 +10,7 @@ env:
   AWS_REGION: ap-northeast-2
   ECR_REPOSITORY: dc-main
   ECS_SERVICE: dc-service-main
-  ECS_CLUSTER: dc-cluster-main
+  ECS_CLUSTER: arn:aws:ecs:ap-northeast-2:561166824006:cluster/dc-cluster-main
   ECS_TASK_DEFINITION: .aws/task-definition.json
   CONTAINER_NAME: dc-main
   REGISTRY_ALIAS: v0g8b0z8
