@@ -73,7 +73,12 @@ jobs:
       IMAGE_TAG: ${{ env.IMAGE_TAG }}
   CD:
     needs: CI
-    runs-on: [ubuntu-20.04]
+    runs-on:
+      [
+        ubuntu-20.04,
+        '${{ needs.CI.outputs.ECR_REGISTRY }}',
+        '${{ needs.CI.outputs.IMAGE_TAG }}',
+      ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
