@@ -37,11 +37,6 @@ jobs:
       - name: Transpile
         run: npm run build
 
-      - name: Check
-        run: |
-          ls -al
-          ls -al dist
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         env:
