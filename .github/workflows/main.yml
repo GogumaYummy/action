@@ -72,8 +72,8 @@ jobs:
       - name: Output variables
         id: output
         run: |
-          echo "ECR_REGISTRY=${{ECR_REGISTRY}}" >> $GITHUB_OUTPUT
-          echo "IMAGE_TAG=${{IMAGE_TAG}}" >> $GITHUB_OUTPUT
+          echo "ECR_REGISTRY=${{env.ECR_REGISTRY}}" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG=${{env.IMAGE_TAG}}" >> $GITHUB_OUTPUT
 
     outputs:
       ECR_REGISTRY: ${{ steps.output.outputs.ECR_REGISTRY }}
