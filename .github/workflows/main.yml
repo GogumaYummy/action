@@ -2,7 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: ['main']
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 env:
   AWS_REGION: ap-northeast-2
@@ -55,8 +57,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
